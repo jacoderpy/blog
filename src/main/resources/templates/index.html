@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/layui/css/layui.css" >
+    <link rel="stylesheet" href="../static/css/me.css" >
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css" />
+<!--    th:href="@{/static/layui/css/layui.css}
+th:href="@{/static/css/me.css}""-->
+</head>
+<body>
+
+<div class="layui-header header">
+
+    <div class="layui-main">
+        <a class="logo" href="#">codermax</a>
+
+        <ul class="layui-nav">
+
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i
+                    class="fa fa-fw fa-home"></i> 首 页</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归 档</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-paint-brush"
+                                                                                    aria-hidden="true"></i> 个人项目</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fire"
+                                                                                    aria-hidden="true"></i> 点击排行</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关
+                于</a></li>
+            <li class="layui-nav-item navto-search"><a href="javascript:;" class="search-show active nav-li-a">
+                <i class="fa fa-search"></i> 搜 索
+            </a></li>
+
+            <li class="layui-nav-item nav-btn layui-hide-sm">
+                <a href="javascript:;">
+                    <i class='layui-icon layui-icon-more'></i>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-home"></i> 首页</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归档</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-paint-brush" aria-hidden="true"></i> 个人项目</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fire" aria-hidden="true"></i> 点击排行</a></dd>
+
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关于</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="site-search">
+    <div class="container">
+        <form method="get" class="site-search-form" action="https://www.huangguorui.cn/">
+            <input class="search-input" name="s" type="text" placeholder="输入关键字" value="">
+            <button class="search-btn" type="submit" style="float: right"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+<div class="layui-container">
+
+    <div class="layui-row layui-col-space15 main">
+        <div class="layui-col-md9 layui-col-lg9">
+            <div class="title-article list-card">
+                <a href="#">
+                    <div class="list-pic"><a href="#"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="../static/images/index.png"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                    </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20 次阅读</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="../static/images/index.png"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                         </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+            <div class="title-article list-card">
+                <a href="https://www.echo.so/php/62.html">
+                    <div class="list-pic"><a href="https://www.echo.so/php/62.html"
+                                             title="Typecho 标签云如何随机展示固定个数的标签？"><img
+                            src="https://www.echo.so/usr/uploads/2019/08/3427585675.jpeg"
+                            alt="Typecho 标签云如何随机展示固定个数的标签？" class="img-full"></a></div>
+                    <h1 class="container-title">
+                        <a href="#" class="title-link">
+                            Typecho
+                        </a>
+                    </h1>
+                    <p>
+                        首先，我们先来看看官方文档：
+
+                        php
+                        收到货发破解阿士大夫票据安徽省附近哈萨克减肥哈克斯Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode
+                        位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的 UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而
+                        Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        Typecho 默认不支持 Emoji 表情，这不是程序的锅，而是由于编码的问题造成，Emoji 是一种在 Unicode 位于\u1F601-\u1F64F区段的字符。这显然超出了目前常用的
+                        UTF-8 字符集的编码范围\u0000-\uFFFF。在 MySQL 中，UTF-8 只支持最多 3 个字节，而 Emoji 是 4 个字节。所以评论中带有 Emoji 表情才会报错。
+
+                        我们只需简单两步即可让 typecho 支持 emoji 表情评论，只要将默认的数据库编码 utf8 修改为 utf8mb4 即可。
+
+                        1.修改评论内容字段的编码
+                        使用数据库管理工具，找到 typecho_comments 评论表的 text 字段，将该字段的编码改为 utf8mb4_general_ci。
+
+                        2.修改数据库配置文件
+                        打开网站根目录数据库配置文件 config.inc.php
+                        将 charset 的值由 utf8 改为 utf8mb4。
+                        </p>
+                </a>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe705;</i> <a href="https://www.echo.so/category/php/">PHP</a></span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-08-24 AM </span>
+                    <span><i class="fa fa-eye" aria-hidden="true"></i> 20人</span>
+                    <span class="layui-hide-xs"><i class="layui-icon">&#xe63a;</i> 8条</span>
+                </div>
+            </div>
+
+            <div class="page-navigator">
+                <div class="layui-laypage layui-laypage-molv">
+                    <a href="https://www.echo.so/page/1/" class="current">1</a>
+                    <a href="https://www.echo.so/page/2/">2</a>
+                    <span>...</span>
+                    <a href="https://www.echo.so/page/8/">8</a>
+                    <a href="https://www.echo.so/page/2/" class="next">»</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar layui-col-md3 layui-col-lg3">
+
+
+            <div class="info">
+                <div class="author-photo">
+                    <img class="author-image" itemprop="image"
+                         src="https://d33wubrfki0l68.cloudfront.net/2959dbc97f31c80283e67104fe0854e2369e40aa/19f61/images/apple-touch-icon-next.png"
+                         alt="Theme NexT">
+
+                    <div class="author motion-element">
+                        <br>
+                        <p class="author-name">codermax</p>
+                        <br>
+                    </div>
+
+                    <div class="author-info">
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">4</span>
+                            <span class="author-info-per-name">访问人数</span>
+                        </div>
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">3</span>
+                            <span class="author-info-per-name">&nbsp文章总数</span>
+                        </div>
+
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">2019-10-26</span>
+                            <span class="author-info-per-name">建站时间</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe705;</i> 栏目分类</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        心情随笔<span class="layui-badge layui-bg-gray">2</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i> 技术杂谈<span class="layui-badge layui-bg-gray">3</span></a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        PHP<span class="layui-badge layui-bg-gray">4</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i> Python<span class="layui-badge layui-bg-gray">2</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i> 点击排行</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>心情随笔</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i>技术杂谈</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>PHP</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tags">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe66e;</i>标签云</h3>
+                <div>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(3, 241, 166)"
+                       href="https://www.echo.so/tag/MySQL/" title='MySQL'>MySQL</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(176, 182, 174)"
+                       href="https://www.echo.so/tag/%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='大端字节序'>大端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(5, 74, 116)"
+                       href="https://www.echo.so/tag/typecho/" title='typecho'>typecho</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(156, 221, 49)"
+                       href="https://www.echo.so/tag/Flask/" title='Flask'>Flask</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(161, 204, 105)"
+                       href="https://www.echo.so/tag/%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='小端字节序'>小端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(183, 19, 78)"
+                       href="https://www.echo.so/tag/python/" title='python'>python</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(37, 104, 110)"
+                       href="https://www.echo.so/tag/%E7%BB%8F%E7%BA%AC%E5%BA%A6/" title='经纬度'>经纬度</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(230, 167, 79)"
+                       href="https://www.echo.so/tag/PHP/" title='PHP'>PHP</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(152, 48, 96)"
+                       href="https://www.echo.so/tag/Django/" title='Django'>Django</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(16, 244, 85)"
+                       href="https://www.echo.so/tag/PHPExcel/" title='PHPExcel'>PHPExcel</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(209, 237, 150)"
+                       href="https://www.echo.so/tag/Selenium/" title='Selenium'>Selenium</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(7, 226, 9)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82/" title='字节'>字节</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(217, 86, 159)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82%E5%BA%8F/" title='字节序'>字节序</a>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe650;</i> 关注我</h3>
+
+                <ul class="nav nav-pills" role="tablist">
+                                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="coderpy@163.com">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>邮箱
+
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="暂无">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>公众号
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="#" target="_blank" title="1984392430">
+                                        <i class="fa fa-qq" aria-hidden="true"></i>QQ号
+                                    </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="https://github.com/" target="_blank" title="GitHub">
+                                        <i class="fa fa-github" aria-hidden="true"></i>GitHub
+                                    </a>
+                                     </span>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span id="scrollpercent"><span>0</span>%</span>
+    &nbsp;
+
+    </span>
+</div>
+<div class="footer">
+    <div class="layui-col-md12 t-copy">
+        <span class="layui-breadcrumb">
+            <span>Copyright &copy; 2019 <a href="https://www.echo.so/">codermax 个人博客</a></span>
+            <p>(✪ω✪)本站已运行</p>><span id="sitetime"></span>
+        </span>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
+<!--<script type="text/javascript" src="js/me.js"></script>-->
+<script type="text/javascript" src="../static/js/velocity/velocity.min.js"></script>
+<script src="../static/layui/layui.js"></script>
+
+<script type="text/javascript">
+    $('.search-show').bind('click', function () {
+        $(this).find('.fa').toggleClass('fa-remove')
+
+        $('body').toggleClass('search-on')
+
+        if ($('body').hasClass('search-on')) {
+            $('.site-search').find('input').focus()
+            $('body').removeClass('m-nav-show')
+        }
+    })
+</script>
+<script type="text/javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element'], function () {
+        var element = layui.element;
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 10, 29, 00, 00, 00); //北京时间2016-12-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = " 已运行" + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }
+    siteTime();
+</script>
+</body>
+</html>

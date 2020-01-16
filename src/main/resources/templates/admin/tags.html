@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>标签管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+
+<div th:replace="admin/_fragments :: menu" class="layui-header header">
+
+    <div class="layui-main">
+        <a class="logo" href="https://www.echo.so/">jacoderpy</a>
+
+        <ul class="layui-nav">
+
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i
+                    class="fa fa-fw fa-home"></i> 管 理 首 页</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-tags"
+                                                                                    aria-hidden="true"></i> 管 理 标 签</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-tags"
+                                                                                    aria-hidden="true"></i> 增 加 标 签</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-lightbulb-o"
+                                                                                    aria-hidden="true"></i> 管 理 分 类</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-lightbulb-o"
+                                                                                    aria-hidden="true"></i> 增 加 分 类</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-file-image-o"
+                                                                                    aria-hidden="true"></i> 上 传 图 片</a>
+            </li>
+
+            <li class="layui-nav-item navto-search"><a href="javascript:;" class="search-show active nav-li-a">
+                <i class="fa fa-search"></i> 搜 索
+            </a></li>
+
+            <li class="layui-nav-item nav-btn layui-hide-sm">
+                <a href="javascript:;">
+                    <i class='layui-icon layui-icon-more'></i>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-home"></i> 首页</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归档</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-paint-brush" aria-hidden="true"></i> 个人项目</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fire" aria-hidden="true"></i> 点击排行</a></dd>
+
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关于</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div th:replace="admin/_fragments :: search" class="site-search">
+    <div class="container">
+        <form method="get" class="site-search-form" action="https://www.huangguorui.cn/">
+            <input class="search-input" name="s" type="text" placeholder="输入关键字" value="">
+            <button class="search-btn" type="submit" style="float: right"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+
+<div class="layui-container">
+    <div class="layui-col-space15 main" style="opacity: 0.85!important;">
+        <table class="layui-table" id="test" lay-skin="row" lay-size="lg">
+            <thead>
+            <tr>
+                <th> ID</th>
+                <th>标签名称</th>
+                <th>添加时间</th>
+                <th>标签操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tag,iterStat : ${page.content}">
+                <td th:text="${iterStat.count}">贤心</td>
+                <td th:text="${tag.name}">汉族</td>
+                <td th:text="${tag.createTime}">1989-10-14</td>
+                <td>
+                    <a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="layui-btn"><i class="layui-icon">&#xe642;</i> 编 辑</a>
+                    <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="layui-btn layui-btn-danger"><i class="layui-icon">&#xe640;</i> 删 除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="float: right">
+            <a href="#"  th:href="@{/admin/types/input}" class="layui-btn"><i class="layui-icon">&#xe654;</i> 增 加 </a>
+        </div>
+    </div>
+    <div class="page-navigator">
+        <div class="layui-laypage layui-laypage-molv">
+            <a href="https://www.echo.so/page/1/" class="current">1</a>
+            <a href="https://www.echo.so/page/2/">2</a>
+            <span>...</span>
+            <a href="https://www.echo.so/page/8/">8</a>
+            <a href="https://www.echo.so/page/2/" class="next">»</a>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="admin/_fragments :: back-to-top" class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span id="scrollpercent"><span>0</span>%</span>
+    &nbsp;
+
+    </span>
+</div>
+<div th:replace="admin/_fragments :: footer" class="footer">
+    <div class="layui-col-md12 t-copy">
+        <span class="layui-breadcrumb">
+            <span>Copyright &copy; 2019 <a href="https://www.echo.so/">jacoderpy 个人博客</a></span>
+            <p>(✪ω✪)本站已运行</p>><span id="sitetime"></span>
+        </span>
+    </div>
+</div>
+
+<script src="../../static/layui/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/js/main.js"></script>
+<script type="text/javascript" src="../../static/js/velocity/velocity.min.js"></script>
+
+
+<script src="../../static/lib/editormd/lib/marked.min.js"></script>
+<script src="../../static/lib/editormd/editormd.min.js"></script>
+
+
+<script type="text/javascript">
+    $('.search-show').bind('click', function () {
+        $(this).find('.fa').toggleClass('fa-remove')
+
+        $('body').toggleClass('search-on')
+
+        if ($('body').hasClass('search-on')) {
+            $('.site-search').find('input').focus()
+            $('body').removeClass('m-nav-show')
+        }
+    })
+</script>
+<script type="text/javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element', 'form', 'table'], function () {
+        var form = layui.form;
+        var element = layui.element;
+        var table = layui.table;
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 10, 29, 00, 00, 00); //北京时间2016-12-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = " 已运行" + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }
+
+    siteTime();
+</script>
+<script type="text/javascript">
+
+    var contentEditor;
+    // 初始化Markdown编辑器
+    $(function () {
+        contentEditor = editormd("md-content", {
+            width: "100%",
+            height: 800,
+            syncScrolling: "single",
+            path: "../lib/editormd/lib/"
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

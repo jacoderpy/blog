@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>error</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Segoe UI, Microsoft YaHei, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            background: #f2f4f6;
+            color: #323a45;
+            -webkit-font-smoothing: antialiased;
+            background:url(../images/about.png)  no-repeat center center;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+
+        .page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.4;
+        }
+        .wrapper {
+            padding-right: 378px;
+            background-size: 278px;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        .page-404 .wrapper {
+            background-image: url(https://dn-coding-net-production-static.qbox.me/static/47b05c7cffd4d5e77ef99275abaf9017.png);
+        }
+
+        .page-500 .wrapper {
+            background-image: url(https://dn-coding-net-production-static.qbox.me/static/528d7710668c5fd6e6dfb4f61c2f9b65.png);
+        }
+        h1 {
+            margin: 0;
+            color: inherit;
+            font-size: 120px;
+            font-weight: bold;
+        }
+        h5{
+            font-family: inherit;
+            font-weight: 600;
+            line-height: 1.1;
+            font-size: 30px;
+            color: inherit;
+        }
+        a {
+            color: #332bae;
+            text-decoration: none;
+        }
+        .summary {
+            margin-top: 0;
+            margin-bottom: 40px;
+            color: inherit;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<!--<h1>错误</h1>-->
+
+<!--在页面中发现业务错误的信息，handler/ControllerHandlerException中控制,在网页源代码-->
+<div>
+    <div th:utext="'&lt;!--'" th:remove="tag"></div>
+    <div th:utext="'Failed Request URL : ' + ${url}" th:remove="tag"></div>
+    <div th:utext="'Exception message : ' + ${exception.message}" th:remove="tag"></div>
+    <ul th:remove="tag">
+        <li th:each="st : ${exception.stackTrace}" th:remove="tag"><span th:utext="${st}" th:remove="tag"></span></li>
+    </ul>
+    <div th:utext="'--&gt;'" th:remove="tag"></div>
+</div>
+<div class="page page-500">
+    <div class="wrapper">
+        <h1>error!</h1>
+        <p class="summary">页面自闭中,请联系管理员......</p>
+        <h5> 你可以 <a href="#">返回首页</a> 。</h5>
+    </div>
+</div>
+
+</body>
+</html>

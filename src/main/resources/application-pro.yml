@@ -1,0 +1,24 @@
+
+spring:
+  datasource:
+    username: root
+    password: 146270
+    url: jdbc:mysql://localhost:3306/myblog?useSSL=FALSE&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+  # 每次连接数据库时都会通过程序中的字段更新数据库
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+logging:
+  level:
+    root: warn
+    com.jacoderpy: info
+  file: log/blog-pro.log
+
+server:
+  port: 8081

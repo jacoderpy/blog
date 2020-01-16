@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: root
+    password: 146270
+    url: jdbc:mysql://localhost:3306/myblog?useSSL=FALSE&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  # 每次连接数据库时都会通过程序中的字段更新数据库，有这个配置之后jpa才能起作用？
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#    open-in-view: false
+
+logging:
+  level:
+    root: info
+    com.jacoderpy: debug
+  file: log/blog-dev.log
+
+server:
+  port: 8080
+
+

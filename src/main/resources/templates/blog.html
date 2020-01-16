@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>博客详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+
+    <link type="text/html" rel="stylesheet" href="../static/lib/editormd/css/editormd.css"/>
+
+
+    <script type="text/javascript">
+        (function () {
+            window.BlogComment = {
+                dom: function (id) {
+                    return document.getElementById(id);
+                },
+
+                create: function (tag, attr) {
+                    var el = document.createElement(tag);
+
+                    for (var key in attr) {
+                        el.setAttribute(key, attr[key]);
+                    }
+
+                    return el;
+                },
+
+                reply: function (cid, coid) {
+                    var comment = this.dom(cid), parent = comment.parentNode,
+                        response = this.dom('respond-post-65'), input = this.dom('comment-parent'),
+                        form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
+                        textarea = response.getElementsByTagName('textarea')[0];
+
+                    if (null == input) {
+                        input = this.create('input', {
+                            'type': 'hidden',
+                            'name': 'parent',
+                            'id': 'comment-parent'
+                        });
+
+                        form.appendChild(input);
+                    }
+
+                    input.setAttribute('value', coid);
+
+                    if (null == this.dom('comment-form-place-holder')) {
+                        var holder = this.create('div', {
+                            'id': 'comment-form-place-holder'
+                        });
+
+                        response.parentNode.insertBefore(holder, response);
+                    }
+
+                    comment.appendChild(response);
+                    this.dom('cancel-comment-reply-link').style.display = '';
+
+                    if (null != textarea && 'text' == textarea.name) {
+                        textarea.focus();
+                    }
+
+                    return false;
+                },
+
+                cancelReply: function () {
+                    var response = this.dom('respond-post-65'),
+                        holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
+
+                    if (null != input) {
+                        input.parentNode.removeChild(input);
+                    }
+
+                    if (null == holder) {
+                        return true;
+                    }
+
+                    this.dom('cancel-comment-reply-link').style.display = 'none';
+                    holder.parentNode.insertBefore(response, holder);
+                    return false;
+                }
+            };
+        })();
+    </script>
+
+</head>
+<body>
+
+<div class="layui-header header">
+
+    <div class="layui-main">
+        <a class="logo" href="https://www.echo.so/">jacoderpy</a>
+
+        <ul class="layui-nav">
+
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i
+                    class="fa fa-fw fa-home"></i> 首 页</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归 档</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-paint-brush"
+                                                                                    aria-hidden="true"></i> 个人项目</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fire"
+                                                                                    aria-hidden="true"></i> 点击排行</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关
+                于</a></li>
+            <li class="layui-nav-item navto-search"><a href="javascript:;" class="search-show active nav-li-a">
+                <i class="fa fa-search"></i> 搜 索
+            </a></li>
+
+            <li class="layui-nav-item nav-btn layui-hide-sm">
+                <a href="javascript:;">
+                    <i class='layui-icon layui-icon-more'></i>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-home"></i> 首页</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归档</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-paint-brush" aria-hidden="true"></i> 个人项目</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fire" aria-hidden="true"></i> 点击排行</a></dd>
+
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关于</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="site-search">
+    <div class="container">
+        <form method="get" class="site-search-form" action="https://www.huangguorui.cn/">
+            <input class="search-input" name="s" type="text" placeholder="输入关键字" value="">
+            <button class="search-btn" type="submit" style="float: right"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+
+<div class="layui-container">
+    <div class="layui-row layui-col-space15 main">
+        <div class="layui-col-md9 layui-col-lg9">
+            <div class="title-article">
+                <h1>liunx Centos7无GUI服务器Selenium部署</h1>
+                <div class="title-msg">
+                    <span><i class="layui-icon">&#xe612;</i> 宁采陈</span>
+                    <span><i class="layui-icon">&#xe60e;</i> 2019-05-04 AM </span>
+                    <span><i class="layui-icon">&#xe63a;</i> 0条</span>
+                </div>
+                <div class="text" itemprop="articleBody">
+                    <div id="md_content_2" class="md_content" style="min-height: 50px;">
+                        <textarea id="append-test" style="display:none;">## 安装chrome
+
+### 1、添加chrome的repo源
+
+```
+vi /etc/yum.repos.d/google.repo
+```
+
+```
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+```
+
+### 2、安装google chrome浏览器
+
+```
+yum -y install google-chrome-stable
+```
+PS: Google官方源可能在中国无法使用，导致安装失败或者在国内无法更新，可以添加以下参数来安装：
+
+```
+yum -y install google-chrome-stable --nogpgcheck
+```
+
+
+
+## 安装chromedrive
+
+下载chromedrive，官网：http://chromedriver.storage.googleapis.com，需要下载对应版本
+```
+wget http://chromedriver.storage.googleapis.com/70.0.3538.97/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+mv -f chromedriver /usr/local/share/chromedriver
+ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+```
+
+## 使用Chrome Headless方式
+
+```
+from selenium import webdriver
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(driver_path='<path-to-driver>/chromedriver', chrome_options=chrome_options,
+  service_args=['--verbose', '--log-path=<path-to-log>/chromedriver.log'])
+...
+```
+
+## Xvfb 和 PyVirtualDisplay
+无GUI时，Xvfb为虚拟GUI
+```
+yum update
+yum install Xvfb
+yum -install libXfont
+yum install xorg-x11-fonts*
+pip install PyVirtualDisplay
+```
+检查DISPLAY设置，默认应该是 :1
+
+env | grep DISPLAY
+
+##### 写个小demo测试下效果
+
+`vim test.py`
+
+```python
+# -*- coding:utf-8 -*-
+
+from selenium import webdriver
+from pyvirtualdisplay import Display
+　　
+
+display = Display(visible=0, size=(800,600))
+display.start()
+driver = webdriver.Chrome("./chromedriver")
+driver.get("http://www.baidu.com")
+print driver.page_source
+
+driver.quit()
+display.stop()
+```
+保存文件，执行命令,即可看到效果
+
+`python test.py`</textarea></div>
+                </div>
+                <div class="tags-text">
+                    <i class="layui-icon">&#xe66e;</i>标签: <a href="https://www.echo.so/tag/python/">python</a>, <a
+                        href="https://www.echo.so/tag/Selenium/">Selenium</a></div>
+                <div class="copy-text">
+                    <div>
+                        <p>非特殊说明，本博所有文章均为博主原创。</p>
+                        <p class="hidden-xs">如若转载，请注明出处：<a href="https://www.echo.so/python/23.html">https://www.echo.so/python/23.html</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="page-text">
+                    <div>
+                        <span class="layui-badge layui-bg-gray">上一篇</span>
+                        <a href="https://www.echo.so/python/21.html"
+                           title="在window上部署python Django、Flask项目，采用apache+mod_wsgi方案">在window上部署python
+                            Django、Flask项目，采用apache+mod_wsgi方案</a></div>
+                    <div>
+                        <span class="layui-badge layui-bg-gray">下一篇</span>
+                        <a href="https://www.echo.so/php/25.html" title="理解字节序 高/低位字节 大端字节序、小端字节序">理解字节序 高/低位字节
+                            大端字节序、小端字节序</a></div>
+                </div>
+                <div class="comment-text layui-form">
+
+
+                    <div id="comments">
+
+                        <!--隐藏的评论-->
+                        <div id="respond-post-23" class="respond">
+                            <div class="cancel-comment-reply">
+                                <a id="cancel-comment-reply-link"
+                                   href="" rel="nofollow"
+                                   style="display:none" onclick="return BlogComment.cancelReply();">取消回复</a>
+                            </div>
+
+                            <h4 id="response"><i class="layui-icon">&#xe664;</i> 评论啦~</h4>
+                            <br/>
+                            <form method="post" action="https://www.echo.so/python/23.html/comment" id="comment-form"
+                                  role="form">
+                                <div class="layui-form-item">
+                                    <textarea rows="5" cols="30" name="text" id="textarea"
+                                              placeholder="嘿~ 大神，别默默的看了，快来点评一下吧" class="layui-textarea"
+                                              required></textarea>
+                                </div>
+                                <div class="layui-form-item layui-row layui-col-space5">
+                                    <div class="layui-col-md4">
+                                        <input type="text" name="author" id="author" class="layui-input"
+                                               placeholder="* 怎么称呼" value="" required/>
+                                    </div>
+                                    <div class="layui-col-md4">
+                                        <input type="email" name="mail" id="mail" lay-verify="email" class="layui-input"
+                                               placeholder="* 邮箱(放心~会保密~.~)" value="" required/>
+                                    </div>
+                                    <div class="layui-col-md4">
+                                        <input type="url" name="url" id="url" lay-verify="url" class="layui-input"
+                                               placeholder="http://您的主页" value=""/>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <button type="submit" class="layui-btn layui-btn-normal">提交评论</button>
+                                </div>
+                            </form>
+                        </div>
+                        <br/>
+                        <h3>已有 23 条评论</h3>
+                        <br/>
+                        <!--评论列表-->
+                        <div class="pinglun">
+                            <ol class="comment-list">
+                                <li id="li-comment-412" class="comment-body comment-parent comment-odd">
+                                    <div id="comment-412" class="pl-dan comment-txt-box">
+                                        <div class="t-p comment-author">
+                                            <img class="avatar"
+                                                 src="https://secure.gravatar.com/avatar/fc16fb6c236140292d4c93faf2cc7fab?s=40&amp;r=G&amp;d="
+                                                 alt="YeGuanHua" width="40" height="40"/></div>
+                                        <div class="t-u comment-author">
+                                            <strong>YeGuanHua
+                                                <span class="layui-badge"></span>
+                                            </strong>
+                                            <div><b></b></div>
+                                            <div class="t-s"><p>
+                                                <p>刚好23号过期了，尴尬</p></p></div>
+                                            <span class="t-btn">
+                                                <a href="#" rel="nofollow"
+                                                   onclick="return BlogComment.reply('comment-412', 412);">回复</a> <span
+                                                    class="t-g">2019-10-23 10:47</span></span>
+                                        </div><!-- 单条评论者信息及内容 -->
+                                    </div>
+                                </li>
+
+
+                                <li id="li-comment-386" class="comment-body comment-parent comment-even">
+                                    <div id="comment-386" class="pl-dan comment-txt-box">
+                                        <div class="t-p comment-author">
+                                            <img class="avatar"
+                                                 src="https://secure.gravatar.com/avatar/de35fe064ceb83a89f7835d8ccb60d12?s=40&amp;r=G&amp;d="
+                                                 alt="陈先森" width="40" height="40"/></div>
+                                        <div class="t-u comment-author">
+                                            <strong>
+                                                陈先森 <span class="layui-badge"></span>
+                                            </strong>
+                                            <div><b></b></div>
+                                            <div class="t-s">
+                                                <p><p>你好大佬，二维码过期了😂看到文章刚好过期，好尴尬</p></p></div>
+                                            <span class="t-btn">
+                                                <a href="https://www.echo.so/life/65.html/comment-page-1?replyTo=386#respond-post-65" rel="nofollow" onclick="return BlogComment.reply('comment-386', 386);">回复</a>
+                                                <span class="t-g">2019-10-15 14:23 </span>
+                                            </span>
+                                        </div><!-- 单条评论者信息及内容 -->
+                                    </div>
+                                    <div class="pl-list comment-children">
+                                        <ol class="comment-list">
+                                            <li id="li-comment-389" class="comment-body comment-child comment-level-odd comment-odd comment-by-author">
+                                                <div id="comment-389" class="pl-dan comment-txt-box">
+                                                    <div class="t-p comment-author">
+                                                        <img class="avatar" src="https://secure.gravatar.com/avatar/108e214ad25b4d5050cfee16bb9bac44?s=40&amp;r=G&amp;d=" alt="宁采陈" width="40" height="40"/>
+                                                    </div>
+                                                    <div class="t-u comment-author">
+                                                        <strong>
+                                                            <a href="https://www.echo.so" rel="external nofollow">宁采陈</a>
+                                                            <span class="layui-badge">博主</span>
+                                                        </strong>
+                                                        <div><b><a href="#comment-386">@陈先森</a></b></div>
+                                                        <div class="t-s">
+                                                            <p><p>更新了</p></p></div>
+                                                        <span class="t-btn">
+                                                            <a href="https://www.echo.so/life/65.html/comment-page-1?replyTo=389#respond-post-65" rel="nofollow" onclick="return BlogComment.reply('comment-389', 389);">回复</a>
+                                                            <span class="t-g">2019-10-16 09:14</span>
+                                                        </span>
+                                                    </div><!-- 单条评论者信息及内容 -->
+                                                </div>
+                                            </li>
+
+                                        </ol>
+                                    </div>
+                                </li>
+
+
+                                <li id="li-comment-380" class="comment-body comment-parent comment-odd">
+                                    <div id="comment-380" class="pl-dan comment-txt-box">
+                                        <div class="t-p comment-author">
+                                            <img class="avatar"
+                                                 src="https://secure.gravatar.com/avatar/08bff80a0f0b0a54de421a937db6cc15?s=40&amp;r=G&amp;d="
+                                                 alt="陈员外" width="40" height="40"/></div>
+                                        <div class="t-u comment-author">
+                                            <strong>
+                                                <a href="http://www.chanyuenwai.com" rel="external nofollow">陈员外</a>
+                                                <span class="layui-badge"></span>
+                                            </strong>
+                                            <div><b></b></div>
+                                            <div class="t-s"><p>
+                                                <p>博主 你好，我想加入微信群，可通过邮件联系我的，麻烦加入下 谢谢</p></p></div>
+                                            <span class="t-btn"><a
+                                                    href="https://www.echo.so/life/65.html/comment-page-1?replyTo=380#respond-post-65"
+                                                    rel="nofollow"
+                                                    onclick="return BlogComment.reply('comment-380', 380);">回复</a> <span
+                                                    class="t-g">2019-10-10 09:22 </span></span>
+                                        </div><!-- 单条评论者信息及内容 -->
+                                    </div>
+                                    <div class="pl-list comment-children">
+                                        <ol class="comment-list">
+                                            <li id="li-comment-382"
+                                                class="comment-body comment-child comment-level-odd comment-odd comment-by-author">
+                                                <div id="comment-382" class="pl-dan comment-txt-box">
+                                                    <div class="t-p comment-author">
+                                                        <img class="avatar"
+                                                             src="https://secure.gravatar.com/avatar/108e214ad25b4d5050cfee16bb9bac44?s=40&amp;r=G&amp;d="
+                                                             alt="宁采陈" width="40" height="40"/></div>
+                                                    <div class="t-u comment-author">
+                                                        <strong>
+                                                            <a href="https://www.echo.so"
+                                                               rel="external nofollow">宁采陈</a> <span
+                                                                class="layui-badge">博主</span>
+                                                        </strong>
+                                                        <div><b><a href="#comment-380">@陈员外</a></b></div>
+                                                        <div class="t-s"><p>
+                                                            <p>扫码进群就可以了</p></p></div>
+                                                        <span class="t-btn"><a
+                                                                href="https://www.echo.so/life/65.html/comment-page-1?replyTo=382#respond-post-65"
+                                                                rel="nofollow"
+                                                                onclick="return BlogComment.reply('comment-382', 382);">回复</a> <span
+                                                                class="t-g">2019-10-10 17:50</span></span>
+                                                    </div><!-- 单条评论者信息及内容 -->
+                                                </div>
+                                            </li>
+
+                                        </ol>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="sidebar layui-col-md3 layui-col-lg3">
+
+
+            <div class="info">
+                <div class="author-photo">
+                    <img class="author-image" itemprop="image"
+                         src="https://d33wubrfki0l68.cloudfront.net/2959dbc97f31c80283e67104fe0854e2369e40aa/19f61/images/apple-touch-icon-next.png"
+                         alt="Theme NexT">
+
+                    <div class="author motion-element">
+                        <br>
+                        <p class="author-name">jacoderpy</p>
+                        <br>
+                    </div>
+
+                    <div class="author-info">
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">4</span>
+                            <span class="author-info-per-name">访问人数</span>
+                        </div>
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">3</span>
+                            <span class="author-info-per-name">&nbsp文章总数</span>
+                        </div>
+
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">2019-10-26</span>
+                            <span class="author-info-per-name">建站时间</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe705;</i> 栏目分类</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        心情随笔<span class="layui-badge layui-bg-gray">2</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i> 技术杂谈<span class="layui-badge layui-bg-gray">3</span></a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        PHP<span class="layui-badge layui-bg-gray">4</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i> Python<span
+                            class="layui-badge layui-bg-gray">2</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i> 点击排行</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>心情随笔</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i>技术杂谈</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>PHP</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tags">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe66e;</i>标签云</h3>
+                <div>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(3, 241, 166)"
+                       href="https://www.echo.so/tag/MySQL/" title='MySQL'>MySQL</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(176, 182, 174)"
+                       href="https://www.echo.so/tag/%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='大端字节序'>大端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(5, 74, 116)"
+                       href="https://www.echo.so/tag/typecho/" title='typecho'>typecho</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(156, 221, 49)"
+                       href="https://www.echo.so/tag/Flask/" title='Flask'>Flask</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(161, 204, 105)"
+                       href="https://www.echo.so/tag/%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='小端字节序'>小端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(183, 19, 78)"
+                       href="https://www.echo.so/tag/python/" title='python'>python</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(37, 104, 110)"
+                       href="https://www.echo.so/tag/%E7%BB%8F%E7%BA%AC%E5%BA%A6/" title='经纬度'>经纬度</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(230, 167, 79)"
+                       href="https://www.echo.so/tag/PHP/" title='PHP'>PHP</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(152, 48, 96)"
+                       href="https://www.echo.so/tag/Django/" title='Django'>Django</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(16, 244, 85)"
+                       href="https://www.echo.so/tag/PHPExcel/" title='PHPExcel'>PHPExcel</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(209, 237, 150)"
+                       href="https://www.echo.so/tag/Selenium/" title='Selenium'>Selenium</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(7, 226, 9)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82/" title='字节'>字节</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(217, 86, 159)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82%E5%BA%8F/" title='字节序'>字节序</a>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe650;</i> 关注我</h3>
+
+                <ul class="nav nav-pills" role="tablist">
+                                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="coderpy@163.com">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>邮箱
+
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="暂无">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>公众号
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="#" target="_blank" title="1984392430">
+                                        <i class="fa fa-qq" aria-hidden="true"></i>QQ号
+                                    </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="https://github.com/" target="_blank" title="GitHub">
+                                        <i class="fa fa-github" aria-hidden="true"></i>GitHub
+                                    </a>
+                                     </span>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span id="scrollpercent"><span>0</span>%</span>
+    &nbsp;
+
+    </span>
+</div>
+<div class="footer">
+    <div class="layui-col-md12 t-copy">
+        <span class="layui-breadcrumb">
+            <span>Copyright &copy; 2019 <a href="https://www.echo.so/">jacoderpy 个人博客</a></span>
+        </span>
+    </div>
+</div>
+
+
+<script src="../static/layui/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
+<script type="text/javascript" src="../static/js/velocity/velocity.min.js"></script>
+
+
+<script src="lib/editormd/lib/marked.min.js"></script>
+<script src="lib/editormd/editormd.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        var markdowns = document.getElementsByClassName("md_content");
+        $(markdowns).each(function () {
+            var markdown = $(this).children("#append-test").text();
+            //$('#md_content_'+i).text('');
+            var editormdView;
+            editormdView = editormd.markdownToHTML($(this).attr("id"), {
+                markdown: markdown,//+ "\r\n" + $("#append-test").text(),
+                toolbarAutoFixed: false,
+                htmlDecode: true,
+                emoji: true,
+                tex: true,
+                toc: true,
+                tocm: true,
+                taskList: true,
+                flowChart: false,
+                sequenceDiagram: false,
+            });
+        });
+    });
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element'], function () {
+        var element = layui.element;
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>

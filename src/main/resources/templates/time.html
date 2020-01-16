@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间轴</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/me.css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+
+<div class="layui-header header">
+
+    <div class="layui-main">
+        <a class="logo" href="https://www.echo.so/">jacoderpy</a>
+
+        <ul class="layui-nav">
+
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i
+                    class="fa fa-fw fa-home"></i> 首 页</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归 档</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-paint-brush"
+                                                                                    aria-hidden="true"></i> 个人项目</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fire"
+                                                                                    aria-hidden="true"></i> 点击排行</a>
+            </li>
+            <li class="layui-nav-item layui-hide-xs"><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关
+                于</a></li>
+            <li class="layui-nav-item navto-search"><a href="javascript:;" class="search-show active nav-li-a">
+                <i class="fa fa-search"></i> 搜 索
+            </a></li>
+
+            <li class="layui-nav-item nav-btn layui-hide-sm">
+                <a href="javascript:;">
+                    <i class='layui-icon layui-icon-more'></i>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-home"></i> 首页</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-archive"></i> 归档</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-paint-brush" aria-hidden="true"></i> 个人项目</a></dd>
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fire" aria-hidden="true"></i> 点击排行</a></dd>
+
+                    <dd><a href="" class="nav-li-a"><i class="fa fa-fw fa-user"></i> 关于</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="site-search">
+    <div class="container">
+        <form method="get" class="site-search-form" action="https://www.huangguorui.cn/">
+            <input class="search-input" name="s" type="text" placeholder="输入关键字" value="">
+            <button class="search-btn" type="submit" style="float: right"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+
+<div class="layui-container">
+    <div class="layui-row layui-col-space15 main">
+        <div class="layui-col-md9 layui-col-lg9">
+            <div class="archives">
+                <div class="title-page">
+                    <h3><i class="layui-icon">&#xe653;</i> 文章归档</h3>
+                    <p>目前共计 <em>11</em> 篇日志，共 <em>363</em> 条评论，加油啊~</p>
+                </div>
+                <ul class="layui-timeline">
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                        <div class="layui-timeline-content">
+                            <h3 class="layui-timeline-title"><a href="https://www.echo.so/2019/08/">2019 年 08 月</a></h3>
+                            <p><a href='https://www.echo.so/life/65.html' title='进微信群聊聊人生咧！'>进微信群聊聊人生咧！ <small><i class='layui-icon'>&#xe637;</i> 24日发布，共23条评论</small></a></p><p><a href='https://www.echo.so/php/62.html' title='Typecho 标签云如何随机展示固定个数的标签？'>Typecho 标签云如何随机展示固定个数的标签？ <small><i class='layui-icon'>&#xe637;</i> 24日发布，共8条评论</small></a></p><p><a href='https://www.echo.so/technique/49.html' title='Typecho 评论 Emoji 表情报错 Database Query Error 解决方案！'>Typecho 评论 Emoji 表情报错 Database Query Error 解决方案！ <small><i class='layui-icon'>&#xe637;</i> 21日发布，共13条评论</small></a></p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                        <div class="layui-timeline-content">
+                            <h3 class="layui-timeline-title"><a href="https://www.echo.so/2019/06/">2019 年 06 月</a></h3>
+                            <p><a href='https://www.echo.so/life/41.html' title='本站 Typecho 主题 Echo 开源啦！【又更新啦！】(更新至V1.3.1)'>本站 Typecho 主题 Echo 开源啦！【又更新啦！】(更新至V1.3.1) <small><i class='layui-icon'>&#xe637;</i> 28日发布，共145条评论</small></a></p><p><a href='https://www.echo.so/technique/38.html' title='mysqldump: Got error: 1044: ***when using LOCK TABLES解决方法'>mysqldump: Got error: 1044: ***when using LOCK TABLES解决方法 <small><i class='layui-icon'>&#xe637;</i> 27日发布，共4条评论</small></a></p><p><a href='https://www.echo.so/php/35.html' title='PHPExcel导出,长数字显示为科学计数的解决方法'>PHPExcel导出,长数字显示为科学计数的解决方法 <small><i class='layui-icon'>&#xe637;</i> 20日发布，共0条评论</small></a></p><p><a href='https://www.echo.so/technique/32.html' title='微信公众号页面提醒关注悬浮框'>微信公众号页面提醒关注悬浮框 <small><i class='layui-icon'>&#xe637;</i> 01日发布，共0条评论</small></a></p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                        <div class="layui-timeline-content">
+                            <h3 class="layui-timeline-title"><a href="https://www.echo.so/2019/05/">2019 年 05 月</a></h3>
+                            <p><a href='https://www.echo.so/php/27.html' title='PHP根据经纬度计算两点距离与方圆范围方法'>PHP根据经纬度计算两点距离与方圆范围方法 <small><i class='layui-icon'>&#xe637;</i> 26日发布，共3条评论</small></a></p><p><a href='https://www.echo.so/php/25.html' title='理解字节序 高/低位字节 大端字节序、小端字节序'>理解字节序 高/低位字节 大端字节序、小端字节序 <small><i class='layui-icon'>&#xe637;</i> 09日发布，共0条评论</small></a></p><p><a href='https://www.echo.so/python/23.html' title='liunx Centos7无GUI服务器Selenium部署'>liunx Centos7无GUI服务器Selenium部署 <small><i class='layui-icon'>&#xe637;</i> 04日发布，共0条评论</small></a></p><p><a href='https://www.echo.so/python/21.html' title='在window上部署python Django、Flask项目，采用apache+mod_wsgi方案'>在window上部署python Django、Flask项目，采用apache+mod_wsgi方案 <small><i class='layui-icon'>&#xe637;</i> 04日发布，共0条评论</small></a></p>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">开始</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="sidebar layui-col-md3 layui-col-lg3">
+
+
+            <div class="info">
+                <div class="author-photo">
+                    <img class="author-image" itemprop="image"
+                         src="https://d33wubrfki0l68.cloudfront.net/2959dbc97f31c80283e67104fe0854e2369e40aa/19f61/images/apple-touch-icon-next.png"
+                         alt="Theme NexT">
+
+                    <div class="author motion-element">
+                        <br>
+                        <p class="author-name">jacoderpy</p>
+                        <br>
+                    </div>
+
+                    <div class="author-info">
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">4</span>
+                            <span class="author-info-per-name">访问人数</span>
+                        </div>
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">3</span>
+                            <span class="author-info-per-name">&nbsp文章总数</span>
+                        </div>
+
+                        <div class="author-info-per">
+                            <span class="author-info-per-count">2019-10-26</span>
+                            <span class="author-info-per-name">建站时间</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe705;</i> 栏目分类</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        心情随笔<span class="layui-badge layui-bg-gray">2</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i> 技术杂谈<span class="layui-badge layui-bg-gray">3</span></a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>
+                        PHP<span class="layui-badge layui-bg-gray">4</span></a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i> Python<span class="layui-badge layui-bg-gray">2</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i> 点击排行</h3>
+                <ul class="layui-row layui-col-space5">
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/life/"><i
+                            class="layui-icon">&#xe63c;</i>心情随笔</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/technique/"><i
+                            class="layui-icon">&#xe63c;</i>技术杂谈</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/php/"><i
+                            class="layui-icon">&#xe63c;</i>PHP</a></li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                    <li class="layui-col-md12 layui-col-xs6"><a href="https://www.echo.so/category/python/"><i
+                            class="layui-icon">&#xe63c;</i>Python</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tags">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe66e;</i>标签云</h3>
+                <div>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(3, 241, 166)"
+                       href="https://www.echo.so/tag/MySQL/" title='MySQL'>MySQL</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(176, 182, 174)"
+                       href="https://www.echo.so/tag/%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='大端字节序'>大端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(5, 74, 116)"
+                       href="https://www.echo.so/tag/typecho/" title='typecho'>typecho</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(156, 221, 49)"
+                       href="https://www.echo.so/tag/Flask/" title='Flask'>Flask</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(161, 204, 105)"
+                       href="https://www.echo.so/tag/%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F/"
+                       title='小端字节序'>小端字节序</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(183, 19, 78)"
+                       href="https://www.echo.so/tag/python/" title='python'>python</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(37, 104, 110)"
+                       href="https://www.echo.so/tag/%E7%BB%8F%E7%BA%AC%E5%BA%A6/" title='经纬度'>经纬度</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(230, 167, 79)"
+                       href="https://www.echo.so/tag/PHP/" title='PHP'>PHP</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(152, 48, 96)"
+                       href="https://www.echo.so/tag/Django/" title='Django'>Django</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(16, 244, 85)"
+                       href="https://www.echo.so/tag/PHPExcel/" title='PHPExcel'>PHPExcel</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(209, 237, 150)"
+                       href="https://www.echo.so/tag/Selenium/" title='Selenium'>Selenium</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(7, 226, 9)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82/" title='字节'>字节</a>
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" style="color: rgb(217, 86, 159)"
+                       href="https://www.echo.so/tag/%E5%AD%97%E8%8A%82%E5%BA%8F/" title='字节序'>字节序</a>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <h3 class="title-sidebar"><i class="layui-icon">&#xe650;</i> 关注我</h3>
+
+                <ul class="nav nav-pills" role="tablist">
+                                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="coderpy@163.com">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>邮箱
+
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                        <a href="https://github.com/" target="_blank" title="暂无">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>公众号
+                                        </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="#" target="_blank" title="1984392430">
+                                        <i class="fa fa-qq" aria-hidden="true"></i>QQ号
+                                    </a>
+                                    </span>
+                    <span class="links-of-author-item">
+                                    <a href="https://github.com/" target="_blank" title="GitHub">
+                                        <i class="fa fa-github" aria-hidden="true"></i>GitHub
+                                    </a>
+                                     </span>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span id="scrollpercent"><span>0</span>%</span>
+    &nbsp;
+
+    </span>
+</div>
+<div class="footer">
+    <div class="layui-col-md12 t-copy">
+        <span class="layui-breadcrumb">
+            <span>Copyright &copy; 2019 <a href="https://www.echo.so/">jacoderpy 个人博客</a></span>
+        </span>
+    </div>
+</div>
+
+
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/velocity/velocity.min.js"></script>
+<script type="text/javascript">
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element'], function () {
+        var element = layui.element;
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>
